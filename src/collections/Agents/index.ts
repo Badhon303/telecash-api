@@ -8,7 +8,7 @@ export const Agents: CollectionConfig = {
     useAsTitle: 'email',
     hideAPIURL: process.env.NODE_ENV !== 'development' ? true : false,
     components: {
-      listMenuItems: ['./components/ExportAgentsButton'],
+      beforeList: ['./components/ExportAgentsButton'],
     },
     defaultColumns: [
       'date',
