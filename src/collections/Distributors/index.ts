@@ -69,6 +69,7 @@ export const Distributors: CollectionConfig = {
       name: 'name',
       type: 'text',
       maxLength: 99,
+      minLength: 2,
       required: true,
       hooks: {
         beforeChange: [
@@ -125,6 +126,7 @@ export const Distributors: CollectionConfig = {
       name: 'businessName',
       type: 'text',
       maxLength: 999,
+      minLength: 2,
       required: true,
       hooks: {
         beforeChange: [
@@ -213,6 +215,7 @@ export const Distributors: CollectionConfig = {
       name: 'policeStation',
       type: 'text',
       maxLength: 999,
+      minLength: 2,
       required: true,
       hooks: {
         beforeChange: [
