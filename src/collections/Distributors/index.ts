@@ -8,7 +8,7 @@ export const Distributors: CollectionConfig = {
     useAsTitle: 'email',
     hideAPIURL: process.env.NODE_ENV !== 'development' ? true : false,
     components: {
-      listMenuItems: ['./components/ExportDistributorsButton'],
+      beforeList: ['./components/ExportDistributorsButton'],
     },
     defaultColumns: [
       'date',

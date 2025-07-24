@@ -48,7 +48,16 @@ const ExportAgentsButton = () => {
     }
   }
   return (
-    <div>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        width: '100%',
+        paddingRight: '60px',
+        paddingTop: '10px',
+      }}
+    >
       <Toaster />
       <Button className={'btn--no-margin'} onClick={handleExport}>
         Export to Excel
