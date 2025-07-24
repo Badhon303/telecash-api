@@ -26,6 +26,7 @@ export default buildConfig({
     },
     // Add your own logo and icon here
     components: {
+      beforeNavLinks: ['./components/DashboardNavLink'],
       graphics: {
         Icon: '/graphics/Icon/index.tsx#Icon',
         Logo: '/graphics/Logo/index.tsx#Logo',
