@@ -3,6 +3,9 @@ import { AdminsOrSuperAdmins } from '@/utils/admins-or-super-admins'
 
 export const Media: CollectionConfig = {
   slug: 'media',
+  admin: {
+    hideAPIURL: process.env.NODE_ENV !== 'development' ? true : false,
+  },
   access: {
     read: () => true,
     create: AdminsOrSuperAdmins,

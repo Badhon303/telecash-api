@@ -8,6 +8,7 @@ export const Users: CollectionConfig = {
     hidden: ({ user }) => {
       return !user || user.role !== 'super-admin'
     },
+    hideAPIURL: process.env.NODE_ENV !== 'development' ? true : false,
   },
   auth: {
     tokenExpiration: 7200,

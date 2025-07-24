@@ -69,6 +69,8 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    distributors: Distributor;
+    agents: Agent;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -77,6 +79,8 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    distributors: DistributorsSelect<false> | DistributorsSelect<true>;
+    agents: AgentsSelect<false> | AgentsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -177,6 +181,260 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "distributors".
+ */
+export interface Distributor {
+  id: string;
+  date?: string | null;
+  name: string;
+  phoneNo: string;
+  email: string;
+  businessName: string;
+  district:
+    | 'bagerhat'
+    | 'bandarban'
+    | 'barguna'
+    | 'barisal'
+    | 'bhola'
+    | 'bogra'
+    | 'brahmanbaria'
+    | 'chandpur'
+    | 'chapai-nawabganj'
+    | 'chattogram'
+    | 'chuadanga'
+    | 'comilla'
+    | 'coxs-bazar'
+    | 'dhaka'
+    | 'dinajpur'
+    | 'faridpur'
+    | 'feni'
+    | 'gaibandha'
+    | 'gazipur'
+    | 'gopalganj'
+    | 'habiganj'
+    | 'jamalpur'
+    | 'jessore'
+    | 'jhalokati'
+    | 'jhenaidah'
+    | 'joypurhat'
+    | 'khagrachari'
+    | 'khulna'
+    | 'kishoreganj'
+    | 'kurigram'
+    | 'kushtia'
+    | 'lakshmipur'
+    | 'lalmonirhat'
+    | 'madaripur'
+    | 'magura'
+    | 'manikganj'
+    | 'meherpur'
+    | 'moulvibazar'
+    | 'munshiganj'
+    | 'mymensingh'
+    | 'naogaon'
+    | 'narail'
+    | 'narayanganj'
+    | 'narsingdi'
+    | 'natore'
+    | 'netrokona'
+    | 'nilphamari'
+    | 'noakhali'
+    | 'pabna'
+    | 'panchagarh'
+    | 'patuakhali'
+    | 'pirojpur'
+    | 'rajbari'
+    | 'rajshahi'
+    | 'rangamati'
+    | 'rangpur'
+    | 'satkhira'
+    | 'shariatpur'
+    | 'sherpur'
+    | 'sirajganj'
+    | 'sunamganj'
+    | 'sylhet'
+    | 'tangail'
+    | 'thakurgaon';
+  policeStation: string;
+  nid: string;
+  tradeLicenseNo: string;
+  tradeLicenseExpiryMonth:
+    | 'january'
+    | 'february'
+    | 'march'
+    | 'april'
+    | 'may'
+    | 'june'
+    | 'july'
+    | 'august'
+    | 'september'
+    | 'october'
+    | 'november'
+    | 'december';
+  tradeLicenseExpiryYear:
+    | '2020'
+    | '2021'
+    | '2022'
+    | '2023'
+    | '2024'
+    | '2025'
+    | '2026'
+    | '2027'
+    | '2028'
+    | '2029'
+    | '2030'
+    | '2031'
+    | '2032'
+    | '2033'
+    | '2034'
+    | '2035'
+    | '2036'
+    | '2037'
+    | '2038'
+    | '2039'
+    | '2040'
+    | '2041'
+    | '2042'
+    | '2043'
+    | '2044'
+    | '2045'
+    | '2046'
+    | '2047'
+    | '2048'
+    | '2049'
+    | '2050';
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "agents".
+ */
+export interface Agent {
+  id: string;
+  date?: string | null;
+  name: string;
+  phoneNo: string;
+  email: string;
+  businessName: string;
+  district:
+    | 'bagerhat'
+    | 'bandarban'
+    | 'barguna'
+    | 'barisal'
+    | 'bhola'
+    | 'bogra'
+    | 'brahmanbaria'
+    | 'chandpur'
+    | 'chapai-nawabganj'
+    | 'chattogram'
+    | 'chuadanga'
+    | 'comilla'
+    | 'coxs-bazar'
+    | 'dhaka'
+    | 'dinajpur'
+    | 'faridpur'
+    | 'feni'
+    | 'gaibandha'
+    | 'gazipur'
+    | 'gopalganj'
+    | 'habiganj'
+    | 'jamalpur'
+    | 'jessore'
+    | 'jhalokati'
+    | 'jhenaidah'
+    | 'joypurhat'
+    | 'khagrachari'
+    | 'khulna'
+    | 'kishoreganj'
+    | 'kurigram'
+    | 'kushtia'
+    | 'lakshmipur'
+    | 'lalmonirhat'
+    | 'madaripur'
+    | 'magura'
+    | 'manikganj'
+    | 'meherpur'
+    | 'moulvibazar'
+    | 'munshiganj'
+    | 'mymensingh'
+    | 'naogaon'
+    | 'narail'
+    | 'narayanganj'
+    | 'narsingdi'
+    | 'natore'
+    | 'netrokona'
+    | 'nilphamari'
+    | 'noakhali'
+    | 'pabna'
+    | 'panchagarh'
+    | 'patuakhali'
+    | 'pirojpur'
+    | 'rajbari'
+    | 'rajshahi'
+    | 'rangamati'
+    | 'rangpur'
+    | 'satkhira'
+    | 'shariatpur'
+    | 'sherpur'
+    | 'sirajganj'
+    | 'sunamganj'
+    | 'sylhet'
+    | 'tangail'
+    | 'thakurgaon';
+  policeStation: string;
+  nid: string;
+  tradeLicenseNo: string;
+  tradeLicenseExpiryMonth:
+    | 'january'
+    | 'february'
+    | 'march'
+    | 'april'
+    | 'may'
+    | 'june'
+    | 'july'
+    | 'august'
+    | 'september'
+    | 'october'
+    | 'november'
+    | 'december';
+  tradeLicenseExpiryYear:
+    | '2020'
+    | '2021'
+    | '2022'
+    | '2023'
+    | '2024'
+    | '2025'
+    | '2026'
+    | '2027'
+    | '2028'
+    | '2029'
+    | '2030'
+    | '2031'
+    | '2032'
+    | '2033'
+    | '2034'
+    | '2035'
+    | '2036'
+    | '2037'
+    | '2038'
+    | '2039'
+    | '2040'
+    | '2041'
+    | '2042'
+    | '2043'
+    | '2044'
+    | '2045'
+    | '2046'
+    | '2047'
+    | '2048'
+    | '2049'
+    | '2050';
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -189,6 +447,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: string | Media;
+      } | null)
+    | ({
+        relationTo: 'distributors';
+        value: string | Distributor;
+      } | null)
+    | ({
+        relationTo: 'agents';
+        value: string | Agent;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -296,6 +562,44 @@ export interface MediaSelect<T extends boolean = true> {
               filename?: T;
             };
       };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "distributors_select".
+ */
+export interface DistributorsSelect<T extends boolean = true> {
+  date?: T;
+  name?: T;
+  phoneNo?: T;
+  email?: T;
+  businessName?: T;
+  district?: T;
+  policeStation?: T;
+  nid?: T;
+  tradeLicenseNo?: T;
+  tradeLicenseExpiryMonth?: T;
+  tradeLicenseExpiryYear?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "agents_select".
+ */
+export interface AgentsSelect<T extends boolean = true> {
+  date?: T;
+  name?: T;
+  phoneNo?: T;
+  email?: T;
+  businessName?: T;
+  district?: T;
+  policeStation?: T;
+  nid?: T;
+  tradeLicenseNo?: T;
+  tradeLicenseExpiryMonth?: T;
+  tradeLicenseExpiryYear?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

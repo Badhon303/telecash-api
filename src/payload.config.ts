@@ -9,6 +9,8 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { Distributors } from './collections/Distributors'
+import { Agents } from './collections/Agents'
 
 // import { Avatar } from '@/graphics/Avatar'
 
@@ -45,7 +47,7 @@ export default buildConfig({
       titleSuffix: 'Telecash - SouthEast Bank',
     },
   },
-  collections: [Users, Media],
+  collections: [Users, Media, Distributors, Agents],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -65,4 +67,23 @@ export default buildConfig({
     payloadCloudPlugin(),
     // storage-adapter-placeholder
   ],
+  cors: [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'https://telecash.com.bd',
+    'https://api.telecash.com.bd',
+  ],
+  // If you are protecting resources behind user authentication,
+  // This will allow cookies to be sent between the two domains
+  csrf: [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'https://telecash.com.bd',
+    'https://api.telecash.com.bd',
+  ],
+  upload: {
+    limits: {
+      fileSize: 2000000, // 2MB, written in bytes
+    },
+  },
 })
